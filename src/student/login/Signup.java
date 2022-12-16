@@ -167,21 +167,31 @@ public class Signup extends javax.swing.JFrame {
         String userid = text_signup_userid.getText();
         String pass = String.valueOf(text_signup_pass.getPassword());
         
-        Run_query run=new Run_query();
-            
-        if(run.run_signup_query(userid, pass, name, email))
-        {
-//            setVisible(false);
-//            new Dashboard().setVisible(true);
-            JOptionPane.showMessageDialog(this, "User Successfully created", "Success", JOptionPane.INFORMATION_MESSAGE);
-            dispose();
-            new Login().setVisible(true);
-        }
+        if(name.isBlank() || email.isBlank() || email.isBlank() || pass.isBlank()){
+            JOptionPane.showMessageDialog(this, "Incomplete fields", "Failed", JOptionPane.ERROR_MESSAGE);
+//            return;
+        }            
         else{
-//            text_error.setText("Username or password Incorrect");
-            JOptionPane.showMessageDialog(this, "Failed to create User", "Failed", JOptionPane.ERROR_MESSAGE);
+            Run_query run=new Run_query();
+            int flag=run.run_signup_query(userid, pass, name, email);
+//        Run_query run=new Run_query();
+//        int flag=run.run_signup_query(userid, pass, name, email);
+            if(flag==1)
+            {
+    //            setVisible(false);
+    //            new Dashboard().setVisible(true);
+                JOptionPane.showMessageDialog(this, "User Successfully created", "Success", JOptionPane.INFORMATION_MESSAGE);
+                dispose();
+                new Login().setVisible(true);
+            }
+            else if(flag==-1){
+                JOptionPane.showMessageDialog(this, "Duplicate user_id or email not allowed", "Failed", JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+    //            text_error.setText("Username or password Incorrect");
+                JOptionPane.showMessageDialog(this, "Failed to create User", "Failed", JOptionPane.ERROR_MESSAGE);
+            }
         }
-        
     }//GEN-LAST:event_btn_signupActionPerformed
 
     private void text_signup_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_signup_nameActionPerformed

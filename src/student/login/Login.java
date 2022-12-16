@@ -5,9 +5,6 @@
 package student.login;
 
 import javax.swing.WindowConstants;
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -154,13 +151,13 @@ public class Login extends javax.swing.JFrame {
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         // TODO add your handling code here:
         
-        if(text_user.getText().isEmpty()){
+        if(text_user.getText().isBlank()){
             text_error.setText("Enter user_id");
             return;
         }
             
         
-        if(String.valueOf(text_pass.getPassword()).isEmpty()){
+        if(String.valueOf(text_pass.getPassword()).isBlank()){
             text_error.setText("Enter password");
             return;
         }
@@ -193,12 +190,12 @@ public class Login extends javax.swing.JFrame {
 //        try {
             Run_query run=new Run_query();
 //            Connection con = run.get_conn();
-            
-            if(run.run_login_query(user, pass))
+            Student stud=run.run_login_query(user, pass);
+            if(!stud.getUserid().isBlank())
             {
 //                setVisible(false);
                 dispose();
-                new Dashboard().setVisible(true);
+                new Dashboard(stud).setVisible(true);
             }
             else{
                 text_error.setText("Username or password is Incorrect");

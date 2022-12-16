@@ -42,12 +42,13 @@ public class Run_query {
         return con;
     }
     
-    public boolean run_login_query(String userid, String pass){
+    public Student run_login_query(String userid, String pass){
         
 //        Connection con;
 //        PreparedStatement stmt;
         ResultSet rs=null;
-        boolean b=false;
+//        boolean b=false;
+        Student student=new Student();
         
             try(Connection con=get_conn(); PreparedStatement ps=con.prepareStatement(login_query);){
                 ps.setString(1, userid);
@@ -55,8 +56,14 @@ public class Run_query {
                 
                 rs=ps.executeQuery();
                 
-                b = rs.next();
-                
+                if(rs.next())
+                {
+//                    b=true;
+                    student.setName(rs.getString("name"));
+                    student.setUserid(rs.getString("user_id"));
+                    student.setEmail(rs.getString("email"));
+                    student.setPass(rs.getString("password"));
+                }
                 con.close();
 //                return rs;
             }
@@ -68,13 +75,14 @@ public class Run_query {
 //            rs=stmt.executeQuery();
 //            con.close();
 //            return rs;
-             return b;
+            return student;
     }
     
-    public boolean run_signup_query(String userid, String pass, String name, String email){
+    public int run_signup_query(String userid, String pass, String name, String email){
         
-        ResultSet rs=null;
-        boolean b=false;
+//        ResultSet rs=null;
+//        boolean b=false;
+        int flag=0;  // 0: Failed, 1: Successful, -1: SQLIntegrityConstraintViolationException
         
             try(Connection con=get_conn(); PreparedStatement ps=con.prepareStatement(signup_query);){
                 ps.setString(1, userid);
@@ -83,22 +91,27 @@ public class Run_query {
                 ps.setString(4, email);
                 
                 int n=ps.executeUpdate();
-                
-                b = true;
+                flag=1;
+//                b = true;
                 
                 con.close();
 //                return rs;
             }
+            catch(java.sql.SQLIntegrityConstraintViolationException E)
+            {
+//                b=false;
+                flag=-1;
+            }
             catch(Exception E)
             {
                 E.printStackTrace();
-                b=false;
+//                b=false;
             }
 //            stmt=con.prepareStatement(query);
 //            rs=stmt.executeQuery();
 //            con.close();
 //            return rs;
-             return b;
+             return flag;
     }
     
 }
