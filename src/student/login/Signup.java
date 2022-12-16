@@ -4,6 +4,7 @@
  */
 package student.login;
 
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 
@@ -170,7 +171,13 @@ public class Signup extends javax.swing.JFrame {
         if(name.isBlank() || email.isBlank() || email.isBlank() || pass.isBlank()){
             JOptionPane.showMessageDialog(this, "Incomplete fields", "Failed", JOptionPane.ERROR_MESSAGE);
 //            return;
-        }            
+        }     
+        
+        if(!Pattern.compile("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" 
+        + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$").matcher(email).matches()){
+            JOptionPane.showMessageDialog(this, "Incorrect email", "Failed", JOptionPane.ERROR_MESSAGE);
+        }
+        
         else{
             Run_query run=new Run_query();
             int flag=run.run_signup_query(userid, pass, name, email);
