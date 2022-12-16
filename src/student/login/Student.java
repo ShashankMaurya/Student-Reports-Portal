@@ -10,7 +10,7 @@ package student.login;
  */
 public class Student {
     
-    String name, email, userid, pass;
+    private String name, email, userid, pass;
     
     Student(){
         name="";
