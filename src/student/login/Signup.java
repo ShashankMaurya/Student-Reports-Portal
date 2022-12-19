@@ -4,6 +4,7 @@
  */
 package student.login;
 
+import java.awt.event.KeyEvent;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
@@ -74,6 +75,11 @@ public class Signup extends javax.swing.JFrame {
                 text_signup_nameActionPerformed(evt);
             }
         });
+        text_signup_name.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                text_signup_nameKeyPressed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -84,16 +90,31 @@ public class Signup extends javax.swing.JFrame {
         jLabel6.setText("Pass :");
 
         text_signup_pass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text_signup_pass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                text_signup_passKeyPressed(evt);
+            }
+        });
 
         text_signup_email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text_signup_emailActionPerformed(evt);
             }
         });
+        text_signup_email.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                text_signup_emailKeyPressed(evt);
+            }
+        });
 
         text_signup_userid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 text_signup_useridActionPerformed(evt);
+            }
+        });
+        text_signup_userid.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                text_signup_useridKeyPressed(evt);
             }
         });
 
@@ -162,7 +183,11 @@ public class Signup extends javax.swing.JFrame {
 
     private void btn_signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_signupActionPerformed
         // TODO add your handling code here:
-        
+        do_signup();
+    }//GEN-LAST:event_btn_signupActionPerformed
+
+    public void do_signup()
+    {
         String name = text_signup_name.getText();
         String email = text_signup_email.getText();
         String userid = text_signup_userid.getText();
@@ -183,24 +208,22 @@ public class Signup extends javax.swing.JFrame {
             int flag=run.run_signup_query(userid, pass, name, email);
 //        Run_query run=new Run_query();
 //        int flag=run.run_signup_query(userid, pass, name, email);
-            if(flag==1)
-            {
-    //            setVisible(false);
-    //            new Dashboard().setVisible(true);
-                JOptionPane.showMessageDialog(this, "User Successfully created", "Success", JOptionPane.INFORMATION_MESSAGE);
-                dispose();
-                new Login().setVisible(true);
-            }
-            else if(flag==-1){
-                JOptionPane.showMessageDialog(this, "Duplicate user_id or email not allowed", "Failed", JOptionPane.ERROR_MESSAGE);
-            }
-            else{
-    //            text_error.setText("Username or password Incorrect");
-                JOptionPane.showMessageDialog(this, "Failed to create User", "Failed", JOptionPane.ERROR_MESSAGE);
+            switch (flag) {
+                case 1 -> {
+                    //            setVisible(false);
+                    //            new Dashboard().setVisible(true);
+                    JOptionPane.showMessageDialog(this, "User Successfully created", "Success", JOptionPane.INFORMATION_MESSAGE);
+                    dispose();
+                    new Login().setVisible(true);
+                }
+                case -1 -> JOptionPane.showMessageDialog(this, "User_id or Email already exists", "Failed", JOptionPane.ERROR_MESSAGE);
+                default -> //            text_error.setText("Username or password Incorrect");
+                    JOptionPane.showMessageDialog(this, "Failed to create User", "Failed", JOptionPane.ERROR_MESSAGE);
             }
         }
-    }//GEN-LAST:event_btn_signupActionPerformed
-
+    }
+    
+    
     private void text_signup_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_signup_nameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_text_signup_nameActionPerformed
@@ -212,6 +235,30 @@ public class Signup extends javax.swing.JFrame {
     private void text_signup_useridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_signup_useridActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_text_signup_useridActionPerformed
+
+    private void text_signup_nameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_signup_nameKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+            do_signup();
+    }//GEN-LAST:event_text_signup_nameKeyPressed
+
+    private void text_signup_emailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_signup_emailKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+            do_signup();
+    }//GEN-LAST:event_text_signup_emailKeyPressed
+
+    private void text_signup_useridKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_signup_useridKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+            do_signup();
+    }//GEN-LAST:event_text_signup_useridKeyPressed
+
+    private void text_signup_passKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_signup_passKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+            do_signup();
+    }//GEN-LAST:event_text_signup_passKeyPressed
 
     /**
      * @param args the command line arguments

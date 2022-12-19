@@ -4,6 +4,7 @@
  */
 package student.login;
 
+import java.awt.event.KeyEvent;
 import javax.swing.WindowConstants;
 
 /**
@@ -72,6 +73,11 @@ public class Login extends javax.swing.JFrame {
                 text_userActionPerformed(evt);
             }
         });
+        text_user.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                text_userKeyPressed(evt);
+            }
+        });
 
         btn_login.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btn_login.setText("Login");
@@ -90,6 +96,11 @@ public class Login extends javax.swing.JFrame {
         });
 
         text_pass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text_pass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                text_passKeyPressed(evt);
+            }
+        });
 
         text_error.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         text_error.setForeground(new java.awt.Color(255, 0, 0));
@@ -150,6 +161,10 @@ public class Login extends javax.swing.JFrame {
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         // TODO add your handling code here:
+        do_login();
+    }//GEN-LAST:event_btn_loginActionPerformed
+
+    public void do_login(){
         
         if(text_user.getText().isBlank()){
             text_error.setText("Enter user_id");
@@ -212,14 +227,26 @@ public class Login extends javax.swing.JFrame {
 //        else{
 //            text_error.setText("Username or password Incorrect");
 //        }
-
-    }//GEN-LAST:event_btn_loginActionPerformed
-
+    }
+    
+    
     private void btn_signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_signupActionPerformed
         // TODO add your handling code here:
         setVisible(false);
         new Signup().setVisible(true);
     }//GEN-LAST:event_btn_signupActionPerformed
+
+    private void text_userKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_userKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+            do_login();
+    }//GEN-LAST:event_text_userKeyPressed
+
+    private void text_passKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_passKeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+            do_login();
+    }//GEN-LAST:event_text_passKeyPressed
 
 //    protected void finalize()
 //    {
