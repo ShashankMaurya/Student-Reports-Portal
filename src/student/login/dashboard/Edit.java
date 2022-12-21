@@ -22,6 +22,7 @@ public class Edit extends javax.swing.JFrame {
     public Edit(Student s) {
         initComponents();
         setTitle("Edit");
+        setSize(800,620);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.s=s;
@@ -36,21 +37,581 @@ public class Edit extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btngrp_edit = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
+        dashboard_edit_reports = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        text_edit_lname = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        text_edit_fname = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        date_edit_dob = new com.toedter.calendar.JDateChooser();
+        jLabel6 = new javax.swing.JLabel();
+        text_edit_ph = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        text_edit_email = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        radiobtn_edit_iti = new javax.swing.JRadioButton();
+        radiobtn_edit_diploma = new javax.swing.JRadioButton();
+        radiobtn_edit_grad = new javax.swing.JRadioButton();
+        jLabel9 = new javax.swing.JLabel();
+        text_edit_special = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        year_edit_pass = new com.toedter.calendar.JYearChooser();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        text_edit_expert = new javax.swing.JTextArea();
+        jLabel12 = new javax.swing.JLabel();
+        text_edit_institute = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        text_edit_paassmarks = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        text_edit_obtainedmarks = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        text_edit_totalmarks = new javax.swing.JTextField();
+        btn_create_back = new javax.swing.JButton();
+        btn_create_submit = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        dashboard_edit_reports.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        dashboard_edit_reports.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dashboard_edit_reports.setText("Reports");
+        dashboard_edit_reports.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+
+        jPanel2.setBackground(new java.awt.Color(87, 204, 204));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel3.setText("Last Name :");
+
+        text_edit_lname.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text_edit_lname.setAutoscrolls(false);
+        text_edit_lname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text_edit_lnameActionPerformed(evt);
+            }
+        });
+        text_edit_lname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                text_edit_lnameKeyPressed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel4.setText("First Name :");
+
+        text_edit_fname.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text_edit_fname.setAutoscrolls(false);
+        text_edit_fname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text_edit_fnameActionPerformed(evt);
+            }
+        });
+        text_edit_fname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                text_edit_fnameKeyPressed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel5.setText("Date of Birth :");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel6.setText("Contact No. :");
+
+        text_edit_ph.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text_edit_ph.setAutoscrolls(false);
+        text_edit_ph.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text_edit_phActionPerformed(evt);
+            }
+        });
+        text_edit_ph.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                text_edit_phKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                text_edit_phKeyTyped(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel7.setText("E-mail :");
+
+        text_edit_email.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text_edit_email.setAutoscrolls(false);
+        text_edit_email.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text_edit_emailActionPerformed(evt);
+            }
+        });
+        text_edit_email.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                text_edit_emailKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                text_edit_emailKeyTyped(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel8.setText("Qualification Type :");
+
+        btngrp_edit.add(radiobtn_edit_iti);
+        radiobtn_edit_iti.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        radiobtn_edit_iti.setText("ITI");
+        radiobtn_edit_iti.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radiobtn_edit_itiActionPerformed(evt);
+            }
+        });
+
+        btngrp_edit.add(radiobtn_edit_diploma);
+        radiobtn_edit_diploma.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        radiobtn_edit_diploma.setText("Diploma");
+
+        btngrp_edit.add(radiobtn_edit_grad);
+        radiobtn_edit_grad.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        radiobtn_edit_grad.setText("Graduation");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel9.setText("Specialization :");
+
+        text_edit_special.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text_edit_special.setAutoscrolls(false);
+        text_edit_special.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text_edit_specialActionPerformed(evt);
+            }
+        });
+        text_edit_special.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                text_edit_specialKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                text_edit_specialKeyTyped(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel10.setText("Year of Passing :");
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel11.setText("Any Expertise :");
+
+        text_edit_expert.setColumns(20);
+        text_edit_expert.setRows(5);
+        jScrollPane1.setViewportView(text_edit_expert);
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel12.setText("Institution :");
+
+        text_edit_institute.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text_edit_institute.setAutoscrolls(false);
+        text_edit_institute.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text_edit_instituteActionPerformed(evt);
+            }
+        });
+        text_edit_institute.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                text_edit_instituteKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                text_edit_instituteKeyTyped(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel13.setText("Passing Marks :");
+
+        text_edit_paassmarks.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text_edit_paassmarks.setAutoscrolls(false);
+        text_edit_paassmarks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text_edit_paassmarksActionPerformed(evt);
+            }
+        });
+        text_edit_paassmarks.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                text_edit_paassmarksKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                text_edit_paassmarksKeyTyped(evt);
+            }
+        });
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel14.setText("Obtained Marks :");
+
+        text_edit_obtainedmarks.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text_edit_obtainedmarks.setAutoscrolls(false);
+        text_edit_obtainedmarks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text_edit_obtainedmarksActionPerformed(evt);
+            }
+        });
+        text_edit_obtainedmarks.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                text_edit_obtainedmarksKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                text_edit_obtainedmarksKeyTyped(evt);
+            }
+        });
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel15.setText("Total Marks :");
+
+        text_edit_totalmarks.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text_edit_totalmarks.setAutoscrolls(false);
+        text_edit_totalmarks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text_edit_totalmarksActionPerformed(evt);
+            }
+        });
+        text_edit_totalmarks.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                text_edit_totalmarksKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                text_edit_totalmarksKeyTyped(evt);
+            }
+        });
+
+        btn_create_back.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_create_back.setText("Back");
+        btn_create_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_create_back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_create_backActionPerformed(evt);
+            }
+        });
+
+        btn_create_submit.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_create_submit.setText("Submit");
+        btn_create_submit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(radiobtn_edit_diploma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(radiobtn_edit_iti, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(radiobtn_edit_grad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
+                                .addGap(26, 26, 26)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(date_edit_dob, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(text_edit_fname, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(text_edit_lname, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(text_edit_email, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(text_edit_ph, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(text_edit_special, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(text_edit_totalmarks)
+                                    .addComponent(text_edit_obtainedmarks)
+                                    .addComponent(year_edit_pass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(text_edit_institute, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                                    .addComponent(text_edit_paassmarks)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(btn_create_back, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
+                                .addComponent(btn_create_submit, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(10, 10, 10))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(text_edit_lname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                            .addComponent(year_edit_pass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(text_edit_fname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(text_edit_institute, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(date_edit_dob, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(text_edit_paassmarks, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(text_edit_ph, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(text_edit_email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(radiobtn_edit_iti))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(radiobtn_edit_diploma, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(radiobtn_edit_grad, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(text_edit_special, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(text_edit_obtainedmarks, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(text_edit_totalmarks, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btn_create_submit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_create_back, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(dashboard_edit_reports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(dashboard_edit_reports, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void text_edit_lnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_edit_lnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_lnameActionPerformed
+
+    private void text_edit_lnameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_lnameKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_lnameKeyPressed
+
+    private void text_edit_fnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_edit_fnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_fnameActionPerformed
+
+    private void text_edit_fnameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_fnameKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_fnameKeyPressed
+
+    private void text_edit_phActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_edit_phActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_phActionPerformed
+
+    private void text_edit_phKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_phKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_phKeyPressed
+
+    private void text_edit_phKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_phKeyTyped
+        // TODO add your handling code here:
+        //        text_create_ph.addKeyListener(new KeyAdapter() {
+            //            public void KeyPressed(KeyEvent ke){
+                ////                String value = text_create_ph.getText();
+                ////                int l = value.length();
+                //                if(ke.getKeyChar() >= '0' && ke.getKeyChar()<='9')
+                //                    text_create_ph.setEditable(true);
+                //                else
+                //                    text_create_ph.setEditable(false);
+                //            }
+            //        });
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9')
+            text_edit_ph.setEditable(true);
+        else
+            text_edit_ph.setEditable(false);
+    }//GEN-LAST:event_text_edit_phKeyTyped
+
+    private void text_edit_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_edit_emailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_emailActionPerformed
+
+    private void text_edit_emailKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_emailKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_emailKeyPressed
+
+    private void text_edit_emailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_emailKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_emailKeyTyped
+
+    private void radiobtn_edit_itiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radiobtn_edit_itiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radiobtn_edit_itiActionPerformed
+
+    private void text_edit_specialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_edit_specialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_specialActionPerformed
+
+    private void text_edit_specialKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_specialKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_specialKeyPressed
+
+    private void text_edit_specialKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_specialKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_specialKeyTyped
+
+    private void text_edit_instituteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_edit_instituteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_instituteActionPerformed
+
+    private void text_edit_instituteKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_instituteKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_instituteKeyPressed
+
+    private void text_edit_instituteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_instituteKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_instituteKeyTyped
+
+    private void text_edit_paassmarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_edit_paassmarksActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_paassmarksActionPerformed
+
+    private void text_edit_paassmarksKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_paassmarksKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_paassmarksKeyPressed
+
+    private void text_edit_paassmarksKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_paassmarksKeyTyped
+        // TODO add your handling code here:
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9')
+            text_edit_paassmarks.setEditable(true);
+        else
+            text_edit_paassmarks.setEditable(false);
+    }//GEN-LAST:event_text_edit_paassmarksKeyTyped
+
+    private void text_edit_obtainedmarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_edit_obtainedmarksActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_obtainedmarksActionPerformed
+
+    private void text_edit_obtainedmarksKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_obtainedmarksKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_obtainedmarksKeyPressed
+
+    private void text_edit_obtainedmarksKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_obtainedmarksKeyTyped
+        // TODO add your handling code here:
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9')
+            text_edit_obtainedmarks.setEditable(true);
+        else
+            text_edit_obtainedmarks.setEditable(false);
+    }//GEN-LAST:event_text_edit_obtainedmarksKeyTyped
+
+    private void text_edit_totalmarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_edit_totalmarksActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_totalmarksActionPerformed
+
+    private void text_edit_totalmarksKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_totalmarksKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_edit_totalmarksKeyPressed
+
+    private void text_edit_totalmarksKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_totalmarksKeyTyped
+        // TODO add your handling code here:
+        if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9')
+            text_edit_totalmarks.setEditable(true);
+        else
+            text_edit_totalmarks.setEditable(false);
+    }//GEN-LAST:event_text_edit_totalmarksKeyTyped
+
+    private void btn_create_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_create_backActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new Dashboard(this.s).setVisible(true);
+    }//GEN-LAST:event_btn_create_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -88,5 +649,40 @@ public class Edit extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_create_back;
+    private javax.swing.JButton btn_create_submit;
+    private javax.swing.ButtonGroup btngrp_edit;
+    private javax.swing.JLabel dashboard_edit_reports;
+    private com.toedter.calendar.JDateChooser date_edit_dob;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JRadioButton radiobtn_edit_diploma;
+    private javax.swing.JRadioButton radiobtn_edit_grad;
+    private javax.swing.JRadioButton radiobtn_edit_iti;
+    private javax.swing.JTextField text_edit_email;
+    private javax.swing.JTextArea text_edit_expert;
+    private javax.swing.JTextField text_edit_fname;
+    private javax.swing.JTextField text_edit_institute;
+    private javax.swing.JTextField text_edit_lname;
+    private javax.swing.JTextField text_edit_obtainedmarks;
+    private javax.swing.JTextField text_edit_paassmarks;
+    private javax.swing.JTextField text_edit_ph;
+    private javax.swing.JTextField text_edit_special;
+    private javax.swing.JTextField text_edit_totalmarks;
+    private com.toedter.calendar.JYearChooser year_edit_pass;
     // End of variables declaration//GEN-END:variables
 }

@@ -73,6 +73,7 @@ public class Dashboard extends javax.swing.JFrame {
         jScrollPane1.setViewportView(dashboard_admin);
 
         dashboard_logout.setText("LOGOUT");
+        dashboard_logout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dashboard_logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dashboard_logoutActionPerformed(evt);
@@ -81,6 +82,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         dashboard_profile.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         dashboard_profile.setText("PROFILE");
+        dashboard_profile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dashboard_profile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dashboard_profileActionPerformed(evt);

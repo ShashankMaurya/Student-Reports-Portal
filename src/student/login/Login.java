@@ -81,6 +81,7 @@ public class Login extends javax.swing.JFrame {
 
         btn_login.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btn_login.setText("Login");
+        btn_login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_loginActionPerformed(evt);
@@ -89,6 +90,7 @@ public class Login extends javax.swing.JFrame {
 
         btn_signup.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btn_signup.setText("Signup");
+        btn_signup.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_signup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_signupActionPerformed(evt);
