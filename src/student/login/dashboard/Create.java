@@ -182,6 +182,7 @@ public class Create extends javax.swing.JFrame {
         btngrp_create.add(radiobtn_create_iti);
         radiobtn_create_iti.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         radiobtn_create_iti.setText("ITI");
+        radiobtn_create_iti.setActionCommand("ITI");
         radiobtn_create_iti.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         radiobtn_create_iti.setName("ITI"); // NOI18N
         radiobtn_create_iti.addActionListener(new java.awt.event.ActionListener() {
@@ -193,12 +194,14 @@ public class Create extends javax.swing.JFrame {
         btngrp_create.add(radiobtn_create_diploma);
         radiobtn_create_diploma.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         radiobtn_create_diploma.setText("Diploma");
+        radiobtn_create_diploma.setActionCommand("Diploma");
         radiobtn_create_diploma.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         radiobtn_create_diploma.setName("Diploma"); // NOI18N
 
         btngrp_create.add(radiobtn_create_grad);
         radiobtn_create_grad.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         radiobtn_create_grad.setText("Graduation");
+        radiobtn_create_grad.setActionCommand("Graduation");
         radiobtn_create_grad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         radiobtn_create_grad.setName("Graduation"); // NOI18N
 
@@ -651,8 +654,8 @@ public class Create extends javax.swing.JFrame {
         String dob = sdf.format(date_create_dob.getDate());
         String ph = text_create_ph.getText();
         String email = text_create_email.getText();
-//        String qual_type = btngrp_create.getSelection().getActionCommand();
-        String qual_type = (btngrp_create.getSelection() == radiobtn_create_iti)?radiobtn_create_iti.getText():((btngrp_create.getSelection() == radiobtn_create_diploma)?radiobtn_create_diploma.getText():radiobtn_create_grad.getText());
+        String qual_type = btngrp_create.getSelection().getActionCommand();
+//        String qual_type = (btngrp_create.getSelection() == radiobtn_create_iti)?radiobtn_create_iti.getText():((btngrp_create.getSelection() == radiobtn_create_diploma)?radiobtn_create_diploma.getText():radiobtn_create_grad.getText());
         String special = text_create_special.getText();
         String expert = text_create_expert.getText();
         String yop = String.valueOf(year_create_pass.getYear());
@@ -671,7 +674,7 @@ public class Create extends javax.swing.JFrame {
         else if(obtained_marks > total_marks && pass_marks > total_marks)
             JOptionPane.showMessageDialog(this, "Incorrect Marks", "Failed", JOptionPane.ERROR_MESSAGE);
         
-        else if(ph.trim().length() == 10)
+        else if(ph.trim().length() != 10)
             JOptionPane.showMessageDialog(this, "Incorrect Contact number", "Failed", JOptionPane.ERROR_MESSAGE);
         
         else{
