@@ -11,7 +11,7 @@ import student.login.*;
  *
  * @author shashank
  */
-public class Reports extends javax.swing.JFrame {
+public class Reports_frame extends javax.swing.JFrame {
 
     /**
      * Creates new form Reports
@@ -19,7 +19,7 @@ public class Reports extends javax.swing.JFrame {
     
     Student s;
     
-    public Reports(Student s) {
+    public Reports_frame(Student s) {
         initComponents();
         setTitle("Reports");
         setLocationRelativeTo(null);

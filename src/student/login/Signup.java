@@ -194,15 +194,14 @@ public class Signup extends javax.swing.JFrame {
         String userid = text_signup_userid.getText();
         String pass = String.valueOf(text_signup_pass.getPassword());
         
-        if(name.isBlank() || email.isBlank() || email.isBlank() || pass.isBlank()){
+        if(name.isBlank() || email.isBlank() || userid.isBlank() || pass.isBlank()){
             JOptionPane.showMessageDialog(this, "Incomplete fields", "Failed", JOptionPane.ERROR_MESSAGE);
 //            return;
         }     
         
-        if(!Pattern.compile("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" 
-        + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$").matcher(email).matches()){
+        else if(!Pattern.compile("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" 
+        + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$").matcher(email).matches())
             JOptionPane.showMessageDialog(this, "Incorrect email", "Failed", JOptionPane.ERROR_MESSAGE);
-        }
         
         else{
             Run_query run=new Run_query();

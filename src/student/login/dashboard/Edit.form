@@ -92,25 +92,21 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" max="32767" attributes="0"/>
+                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="radiobtn_edit_diploma" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="radiobtn_edit_iti" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="radiobtn_edit_grad" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="radiobtn_edit_diploma" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="radiobtn_edit_iti" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="radiobtn_edit_grad" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Group type="103" alignment="0" groupAlignment="0" attributes="0">
@@ -125,46 +121,64 @@
                                           <Component id="date_edit_dob" alignment="1" min="-2" pref="180" max="-2" attributes="0"/>
                                           <Component id="text_edit_fname" alignment="1" min="-2" pref="180" max="-2" attributes="0"/>
                                           <Component id="text_edit_lname" alignment="1" min="-2" pref="180" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                               <Component id="text_edit_email" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                                               <Component id="text_edit_ph" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="text_edit_special" min="-2" pref="180" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace pref="119" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel12" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel13" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel14" alignment="1" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel15" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane1" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="text_edit_special" min="-2" pref="180" max="-2" attributes="0"/>
+                                              <EmptySpace pref="272" max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jLabel14" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel15" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="text_edit_obtainedmarks" max="32767" attributes="0"/>
+                                                          <Component id="text_edit_totalmarks" max="32767" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Group type="102" alignment="1" attributes="0">
+                                                          <Group type="103" groupAlignment="0" attributes="0">
+                                                              <Component id="jLabel10" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="jLabel12" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                              <Component id="jLabel13" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                              <Component id="year_edit_pass" alignment="0" max="32767" attributes="0"/>
+                                                              <Component id="text_edit_institute" alignment="0" pref="180" max="32767" attributes="0"/>
+                                                              <Component id="text_edit_paassmarks" alignment="0" max="32767" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <Group type="102" alignment="1" attributes="0">
+                                                          <Component id="btn_create_back" min="-2" pref="150" max="-2" attributes="0"/>
+                                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                                          <Component id="btn_create_submit" min="-2" pref="150" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
                                       </Group>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="text_edit_totalmarks" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="text_edit_obtainedmarks" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="year_edit_pass" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="text_edit_institute" alignment="0" pref="180" max="32767" attributes="0"/>
-                                          <Component id="text_edit_paassmarks" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="btn_create_back" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                      <Component id="btn_create_submit" min="-2" pref="150" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -173,72 +187,22 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel3" min="-2" pref="30" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel4" min="-2" pref="30" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel5" min="-2" pref="30" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="text_edit_lname" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="jLabel10" alignment="0" pref="31" max="32767" attributes="0"/>
                                   <Component id="year_edit_pass" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="text_edit_fname" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="jLabel12" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="text_edit_institute" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="date_edit_dob" pref="32" max="32767" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="jLabel13" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <Component id="text_edit_paassmarks" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="jLabel6" min="-2" pref="30" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel7" min="-2" pref="30" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="text_edit_ph" min="-2" pref="30" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="text_edit_email" min="-2" pref="30" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel8" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="radiobtn_edit_iti" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel13" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="text_edit_paassmarks" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="radiobtn_edit_diploma" pref="35" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="radiobtn_edit_grad" pref="32" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel9" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="text_edit_special" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel14" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="text_edit_obtainedmarks" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
@@ -252,6 +216,52 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="btn_create_submit" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   <Component id="btn_create_back" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel3" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel4" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel5" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="text_edit_lname" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="text_edit_fname" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="date_edit_dob" pref="42" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel6" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel7" min="-2" pref="30" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="text_edit_ph" min="-2" pref="30" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="text_edit_email" min="-2" pref="30" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel8" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="radiobtn_edit_iti" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="radiobtn_edit_diploma" pref="39" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="radiobtn_edit_grad" pref="38" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="text_edit_special" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="jLabel9" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>

@@ -5,6 +5,9 @@
 package student.login;
 
 import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Year;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,6 +24,8 @@ public class Run_query {
     // make all queries here as strings
     String login_query="SELECT * FROM student.student_login WHERE user_id = ? AND password = ?";
     String signup_query="INSERT INTO student.student_login (user_id, password, name, email) VALUES (?,?,?,?);";
+    
+    String create_query="INSERT INTO student.student_report (lname, fname, dob, ph_no, email, qual_type, special, yop, institute, pass_marks, obtain_marks, total_marks, exp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);";
 
 //    Run_query()
 //    {
@@ -112,6 +117,49 @@ public class Run_query {
 //            con.close();
 //            return rs;
              return flag;
+    }
+    
+    public int run_create_query(String lname, String fname, String dob, String ph, String email, String qual_type, String special, String expert, String yop, String institute, int pass_marks, int obtained_marks, int total_marks) throws ParseException{
+        
+        int flag = 0;
+        Year y=Year.of(Integer.parseInt(yop));
+//        Date date = (Date) new SimpleDateFormat("dd/MM/yyyy").parse(dob);
+         try(Connection con = get_conn(); PreparedStatement ps=con.prepareStatement(create_query);){
+//             INSERT INTO student.student_report (lname, fname, dob, ph_no, email, qual_type, special, yop, institute, pass_marks, obtain_marks, total_marks, exp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);
+             ps.setString(1, lname);
+             ps.setString(2, fname);
+//             ps.setDate(3, (java.sql.Date)((Date) new SimpleDateFormat("dd/MM/yyyy").parse(dob)));
+             ps.setDate(3, new java.sql.Date(new SimpleDateFormat("yyyy-MM-dd").parse(dob).getTime()));
+             ps.setString(4, ph);
+             ps.setString(5, email);
+             ps.setString(6, qual_type);
+             ps.setString(7, special);
+//             ps.setDate(8, (java.sql.Date)((Date) new SimpleDateFormat("yyyy").parse(yop)));
+//             ps.setDate(8, new java.sql.Date(new SimpleDateFormat("yyyy").parse(yop).getTime()));
+//             ps.setDate(8, new java.sql.Date(Long.parseLong(yop)));
+             ps.setObject(8, y.getValue());
+             ps.setString(9, institute);
+             ps.setInt(10, pass_marks);
+             ps.setInt(11, obtained_marks);
+             ps.setInt(12, total_marks);
+             ps.setString(13, expert);
+             
+             int n=ps.executeUpdate();
+             flag=1;
+             con.close();
+         }
+         catch(java.sql.SQLIntegrityConstraintViolationException E)
+            {
+//                b=false;
+                flag=-1;
+            }
+            catch(Exception E)
+            {
+                E.printStackTrace();
+//                b=false;
+            }
+         return flag;
+        
     }
     
 }

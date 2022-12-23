@@ -19,12 +19,12 @@ public class Student {
         pass="";
     }
     
-    Student(String a , String b, String c, String d){
-        name=a;
-        email=b;
-        userid=c;
-        pass=d;
-    }
+//    Student(String a , String b, String c, String d){
+//        name=a;
+//        email=b;
+//        userid=c;
+//        pass=d;
+//    }
 
     public String getName() {
         return name;

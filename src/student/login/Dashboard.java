@@ -171,7 +171,7 @@ public class Dashboard extends javax.swing.JFrame {
                 setVisible(false);
             }
             case "Reports" -> {
-                new Reports(s).setVisible(true);
+                new Reports_frame(s).setVisible(true);
                 setVisible(false);
             }
         }
