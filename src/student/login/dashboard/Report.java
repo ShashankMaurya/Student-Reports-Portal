@@ -12,11 +12,11 @@ package student.login.dashboard;
  */
 public class Report {
     
-    String lname, fname, ph, email, qual, special, exp, institute, dob, yop;
+    private String lname, fname, ph, email, qual, special, exp, institute, dob, yop;
 //    SimpleDateFormat sdf;
-    int pass_marks, obtained_marks, total_marks;
+    private int pass_marks, obtained_marks, total_marks;
     
-    Report(){
+    public Report(){
         lname="";
         fname="";
         ph="";

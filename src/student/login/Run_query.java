@@ -4,6 +4,7 @@
  */
 package student.login;
 
+import student.login.dashboard.*;
 import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -26,6 +27,7 @@ public class Run_query {
     String signup_query="INSERT INTO student.student_login (user_id, password, name, email) VALUES (?,?,?,?);";
     
     String create_query="INSERT INTO student.student_report (lname, fname, dob, ph_no, email, qual_type, special, yop, institute, pass_marks, obtain_marks, total_marks, exp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);";
+    String edit_fetch_query="SELECT * FROM student.student_report WHERE email = ?";
 
 //    Run_query()
 //    {
@@ -158,8 +160,41 @@ public class Run_query {
                 E.printStackTrace();
 //                b=false;
             }
-         return flag;
-        
+        return flag;
     }
     
+    public Report run_edit_fetch_query(String email){
+        
+        ResultSet rs=null;
+        Report report=new Report();
+        
+        try(Connection con=get_conn(); PreparedStatement ps=con.prepareStatement(edit_fetch_query);){
+            ps.setString(1, email);
+            
+            rs=ps.executeQuery();
+                
+            if(rs.next())
+            {
+                report.setLname(rs.getString("lname"));
+                report.setFname(rs.getString("fname"));
+                report.setDob(rs.getDate("dob").toString());
+                report.setPh(rs.getString("ph_no"));
+                report.setEmail(rs.getString("email"));
+                report.setQual(rs.getString("qual_type"));
+                report.setSpecial(rs.getString("special"));
+                report.setYop(rs.getObject("yop").toString());
+                report.setInstitute(rs.getString("institute"));
+                report.setPass_marks(rs.getInt("pass_marks"));
+                report.setObtained_marks(rs.getInt("obtain_marks"));
+                report.setTotal_marks(rs.getInt("total_marks"));
+                report.setExp(rs.getString("exp"));
+            }
+            con.close();
+        }
+        catch(Exception E)
+        {
+            E.printStackTrace();
+        }
+        return report;
+    } 
 }

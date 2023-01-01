@@ -167,7 +167,7 @@ public class Dashboard extends javax.swing.JFrame {
                 setVisible(false);
             }
             case "Edit" -> {
-                new Edit(s).setVisible(true);
+                new Edit_emailid(s).setVisible(true);
                 setVisible(false);
             }
             case "Reports" -> {
