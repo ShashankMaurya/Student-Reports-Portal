@@ -8,7 +8,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Enumeration;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Pattern;
 import javax.swing.AbstractButton;
+import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 import student.login.*;
 
@@ -24,6 +28,7 @@ public class Edit extends javax.swing.JFrame {
     
     Student s;
     Report r;
+    String pk_email;
     
     public Edit(Student s, Report r) throws ParseException {
         initComponents();
@@ -57,10 +62,10 @@ public class Edit extends javax.swing.JFrame {
         
         for(Enumeration<AbstractButton> buttons = btngrp_edit.getElements(); buttons.hasMoreElements();){
             AbstractButton btn = buttons.nextElement();
-            if(btn.getText().equals(r.getQual())){
+            if(btn.getActionCommand().equals(r.getQual())){
                 btn.setSelected(true);
                 break;
-            }
+            } 
         }
         
 //        Date date=sdf.parse(r.getYop());
@@ -69,7 +74,7 @@ public class Edit extends javax.swing.JFrame {
         text_edit_expert.setText(r.getExp());
         year_edit_pass.setYear(Integer.parseInt(sdf.format((Date)sdf.parse(r.getYop())))); 
         text_edit_institute.setText(r.getInstitute());
-        text_edit_paassmarks.setText(String.valueOf(r.getPass_marks()));
+        text_edit_passmarks.setText(String.valueOf(r.getPass_marks()));
         text_edit_obtainedmarks.setText(String.valueOf(r.getObtained_marks()));
         text_edit_totalmarks.setText(String.valueOf(r.getTotal_marks()));
     }
@@ -106,7 +111,7 @@ public class Edit extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         text_edit_institute = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        text_edit_paassmarks = new javax.swing.JTextField();
+        text_edit_passmarks = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         text_edit_obtainedmarks = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
@@ -287,19 +292,19 @@ public class Edit extends javax.swing.JFrame {
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel13.setText("Passing Marks :");
 
-        text_edit_paassmarks.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        text_edit_paassmarks.setAutoscrolls(false);
-        text_edit_paassmarks.addActionListener(new java.awt.event.ActionListener() {
+        text_edit_passmarks.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text_edit_passmarks.setAutoscrolls(false);
+        text_edit_passmarks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                text_edit_paassmarksActionPerformed(evt);
+                text_edit_passmarksActionPerformed(evt);
             }
         });
-        text_edit_paassmarks.addKeyListener(new java.awt.event.KeyAdapter() {
+        text_edit_passmarks.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                text_edit_paassmarksKeyPressed(evt);
+                text_edit_passmarksKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                text_edit_paassmarksKeyTyped(evt);
+                text_edit_passmarksKeyTyped(evt);
             }
         });
 
@@ -355,6 +360,11 @@ public class Edit extends javax.swing.JFrame {
         btn_create_submit.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_create_submit.setText("Submit");
         btn_create_submit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_create_submit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_create_submitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -423,7 +433,7 @@ public class Edit extends javax.swing.JFrame {
                                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                 .addComponent(year_edit_pass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(text_edit_institute, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                                                .addComponent(text_edit_paassmarks)))
+                                                .addComponent(text_edit_passmarks)))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                             .addComponent(btn_create_back, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(32, 32, 32)
@@ -446,7 +456,7 @@ public class Edit extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(text_edit_paassmarks, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(text_edit_passmarks, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -619,21 +629,21 @@ public class Edit extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_text_edit_instituteKeyTyped
 
-    private void text_edit_paassmarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_edit_paassmarksActionPerformed
+    private void text_edit_passmarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_edit_passmarksActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_text_edit_paassmarksActionPerformed
+    }//GEN-LAST:event_text_edit_passmarksActionPerformed
 
-    private void text_edit_paassmarksKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_paassmarksKeyPressed
+    private void text_edit_passmarksKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_passmarksKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_text_edit_paassmarksKeyPressed
+    }//GEN-LAST:event_text_edit_passmarksKeyPressed
 
-    private void text_edit_paassmarksKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_paassmarksKeyTyped
+    private void text_edit_passmarksKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_edit_passmarksKeyTyped
         // TODO add your handling code here:
         if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9')
-            text_edit_paassmarks.setEditable(true);
+            text_edit_passmarks.setEditable(true);
         else
-            text_edit_paassmarks.setEditable(false);
-    }//GEN-LAST:event_text_edit_paassmarksKeyTyped
+            text_edit_passmarks.setEditable(false);
+    }//GEN-LAST:event_text_edit_passmarksKeyTyped
 
     private void text_edit_obtainedmarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_edit_obtainedmarksActionPerformed
         // TODO add your handling code here:
@@ -672,6 +682,59 @@ public class Edit extends javax.swing.JFrame {
         dispose();
         new Dashboard(this.s).setVisible(true);
     }//GEN-LAST:event_btn_create_backActionPerformed
+
+    private void btn_create_submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_create_submitActionPerformed
+        // TODO add your handling code here:
+        pk_email=r.getEmail();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        r.setLname(text_edit_lname.getText());
+        r.setFname(text_edit_fname.getText());
+        r.setDob(sdf.format(date_edit_dob.getDate()));
+        r.setPh(text_edit_ph.getText());
+        r.setEmail(text_edit_email.getText());
+        r.setQual(btngrp_edit.getSelection().getActionCommand());
+        r.setSpecial(text_edit_special.getText());
+        r.setExp(text_edit_expert.getText());
+        r.setInstitute(text_edit_institute.getText());
+        r.setYop(String.valueOf(year_edit_pass.getYear()));
+        r.setPass_marks(Integer.parseInt(text_edit_passmarks.getText()));
+        r.setObtained_marks(Integer.parseInt(text_edit_obtainedmarks.getText()));
+        r.setTotal_marks(Integer.parseInt(text_edit_totalmarks.getText()));
+        
+        if(r.getFname().isBlank() || r.getDob().isBlank() || r.getPh().isBlank() || r.getEmail().isBlank() || r.getQual().isBlank() || r.getYop().isBlank() || r.getInstitute().isBlank() || r.getTotal_marks() == 0)
+            JOptionPane.showMessageDialog(this, "Incomplete fields", "Failed", JOptionPane.ERROR_MESSAGE);
+        
+        else if(!Pattern.compile("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" 
+        + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$").matcher(r.getEmail()).matches())
+            JOptionPane.showMessageDialog(this, "Incorrect email", "Failed", JOptionPane.ERROR_MESSAGE);
+        
+        else if(r.getObtained_marks() > r.getTotal_marks() && r.getPass_marks()> r.getTotal_marks())
+            JOptionPane.showMessageDialog(this, "Incorrect Marks", "Failed", JOptionPane.ERROR_MESSAGE);
+        
+        else if(r.getPh().trim().length() != 10)
+            JOptionPane.showMessageDialog(this, "Incorrect Contact number", "Failed", JOptionPane.ERROR_MESSAGE);
+        
+        else{
+            Run_query run=new Run_query();
+            try {
+                int flag=run.run_edit_update_query(r,pk_email);
+                
+                switch (flag) {
+                    case 1 -> {
+                        JOptionPane.showMessageDialog(this, "Report Successfully Updated", "Success", JOptionPane.INFORMATION_MESSAGE);
+                        dispose();
+                        new Dashboard(this.s).setVisible(true);
+                    }
+                    case -1 -> JOptionPane.showMessageDialog(this, "Contact number or Email already exists", "Failed", JOptionPane.ERROR_MESSAGE);
+                    default -> JOptionPane.showMessageDialog(this, "Failed to add Report", "Failed", JOptionPane.ERROR_MESSAGE);
+                }
+                
+            } catch (ParseException ex) {
+                Logger.getLogger(Create.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+    }//GEN-LAST:event_btn_create_submitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -739,7 +802,7 @@ public class Edit extends javax.swing.JFrame {
     private javax.swing.JTextField text_edit_institute;
     private javax.swing.JTextField text_edit_lname;
     private javax.swing.JTextField text_edit_obtainedmarks;
-    private javax.swing.JTextField text_edit_paassmarks;
+    private javax.swing.JTextField text_edit_passmarks;
     private javax.swing.JTextField text_edit_ph;
     private javax.swing.JTextField text_edit_special;
     private javax.swing.JTextField text_edit_totalmarks;

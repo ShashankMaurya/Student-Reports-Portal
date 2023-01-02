@@ -77,7 +77,7 @@ public class Create extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         text_create_institute = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        text_create_paassmarks = new javax.swing.JTextField();
+        text_create_passmarks = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         text_create_obtainedmarks = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
@@ -262,19 +262,19 @@ public class Create extends javax.swing.JFrame {
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel13.setText("Passing Marks :");
 
-        text_create_paassmarks.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        text_create_paassmarks.setAutoscrolls(false);
-        text_create_paassmarks.addActionListener(new java.awt.event.ActionListener() {
+        text_create_passmarks.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        text_create_passmarks.setAutoscrolls(false);
+        text_create_passmarks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                text_create_paassmarksActionPerformed(evt);
+                text_create_passmarksActionPerformed(evt);
             }
         });
-        text_create_paassmarks.addKeyListener(new java.awt.event.KeyAdapter() {
+        text_create_passmarks.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                text_create_paassmarksKeyPressed(evt);
+                text_create_passmarksKeyPressed(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                text_create_paassmarksKeyTyped(evt);
+                text_create_passmarksKeyTyped(evt);
             }
         });
 
@@ -388,7 +388,7 @@ public class Create extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(year_create_pass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(text_create_institute)
-                                    .addComponent(text_create_paassmarks, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(text_create_passmarks, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(7, 7, 7)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -449,7 +449,7 @@ public class Create extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(text_create_paassmarks, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(text_create_passmarks, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(6, 6, 6)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -592,21 +592,21 @@ public class Create extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_text_create_instituteKeyTyped
 
-    private void text_create_paassmarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_create_paassmarksActionPerformed
+    private void text_create_passmarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_create_passmarksActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_text_create_paassmarksActionPerformed
+    }//GEN-LAST:event_text_create_passmarksActionPerformed
 
-    private void text_create_paassmarksKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_create_paassmarksKeyPressed
+    private void text_create_passmarksKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_create_passmarksKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_text_create_paassmarksKeyPressed
+    }//GEN-LAST:event_text_create_passmarksKeyPressed
 
-    private void text_create_paassmarksKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_create_paassmarksKeyTyped
+    private void text_create_passmarksKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_create_passmarksKeyTyped
         // TODO add your handling code here:
         if(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9')
-            text_create_paassmarks.setEditable(true);
+            text_create_passmarks.setEditable(true);
         else
-            text_create_paassmarks.setEditable(false);
-    }//GEN-LAST:event_text_create_paassmarksKeyTyped
+            text_create_passmarks.setEditable(false);
+    }//GEN-LAST:event_text_create_passmarksKeyTyped
 
     private void text_create_obtainedmarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_create_obtainedmarksActionPerformed
         // TODO add your handling code here:
@@ -660,7 +660,7 @@ public class Create extends javax.swing.JFrame {
         String expert = text_create_expert.getText();
         String yop = String.valueOf(year_create_pass.getYear());
         String institute = text_create_institute.getText();
-        int pass_marks = Integer.parseInt(text_create_paassmarks.getText());
+        int pass_marks = Integer.parseInt(text_create_passmarks.getText());
         int obtained_marks = Integer.parseInt(text_create_obtainedmarks.getText());
         int total_marks = Integer.parseInt(text_create_totalmarks.getText());
         
@@ -765,7 +765,7 @@ public class Create extends javax.swing.JFrame {
     private javax.swing.JTextField text_create_institute;
     private javax.swing.JTextField text_create_lname;
     private javax.swing.JTextField text_create_obtainedmarks;
-    private javax.swing.JTextField text_create_paassmarks;
+    private javax.swing.JTextField text_create_passmarks;
     private javax.swing.JTextField text_create_ph;
     private javax.swing.JTextField text_create_special;
     private javax.swing.JTextField text_create_totalmarks;

@@ -28,6 +28,7 @@ public class Run_query {
     
     String create_query="INSERT INTO student.student_report (lname, fname, dob, ph_no, email, qual_type, special, yop, institute, pass_marks, obtain_marks, total_marks, exp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);";
     String edit_fetch_query="SELECT * FROM student.student_report WHERE email = ?";
+    String edit_update_query="UPDATE student.student_report SET lname=?, fname=?, dob=?, ph_no=?, email=?, qual_type=?, special=?, yop=?, institute=?, pass_marks=?, obtain_marks=?, total_marks=?, exp=? WHERE email=?";
 
 //    Run_query()
 //    {
@@ -124,7 +125,7 @@ public class Run_query {
     public int run_create_query(String lname, String fname, String dob, String ph, String email, String qual_type, String special, String expert, String yop, String institute, int pass_marks, int obtained_marks, int total_marks) throws ParseException{
         
         int flag = 0;
-        Year y=Year.of(Integer.parseInt(yop));
+//        Year y=Year.of(Integer.parseInt(yop));
 //        Date date = (Date) new SimpleDateFormat("dd/MM/yyyy").parse(dob);
          try(Connection con = get_conn(); PreparedStatement ps=con.prepareStatement(create_query);){
 //             INSERT INTO student.student_report (lname, fname, dob, ph_no, email, qual_type, special, yop, institute, pass_marks, obtain_marks, total_marks, exp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);
@@ -139,7 +140,7 @@ public class Run_query {
 //             ps.setDate(8, (java.sql.Date)((Date) new SimpleDateFormat("yyyy").parse(yop)));
 //             ps.setDate(8, new java.sql.Date(new SimpleDateFormat("yyyy").parse(yop).getTime()));
 //             ps.setDate(8, new java.sql.Date(Long.parseLong(yop)));
-             ps.setObject(8, y.getValue());
+             ps.setObject(8, Year.of(Integer.parseInt(yop)).getValue());
              ps.setString(9, institute);
              ps.setInt(10, pass_marks);
              ps.setInt(11, obtained_marks);
@@ -197,4 +198,50 @@ public class Run_query {
         }
         return report;
     } 
+    
+    public int run_edit_update_query(Report r, String pk_email) throws ParseException{
+        
+//        UPDATE student.student_report SET lname=?, fname=?, dob=?, ph_no=?, email=?, qual_type=?, special=?, yop=?, institute=?, pass_marks=?, obtain_marks=?, total_marks=?, exp=? WHERE email=?
+
+        int flag = 0;
+//        Year y=Year.of(Integer.parseInt(r.getYop()));
+//        Date date = (Date) new SimpleDateFormat("dd/MM/yyyy").parse(dob);
+        try(Connection con = get_conn(); PreparedStatement ps=con.prepareStatement(edit_update_query);){
+//             INSERT INTO student.student_report (lname, fname, dob, ph_no, email, qual_type, special, yop, institute, pass_marks, obtain_marks, total_marks, exp) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?);
+             ps.setString(1, r.getLname());
+             ps.setString(2, r.getFname());
+//             ps.setDate(3, (java.sql.Date)((Date) new SimpleDateFormat("dd/MM/yyyy").parse(dob)));
+             ps.setDate(3, new java.sql.Date(new SimpleDateFormat("yyyy-MM-dd").parse(r.getDob()).getTime()));
+             ps.setString(4, r.getPh());
+             ps.setString(5, r.getEmail());
+             ps.setString(6, r.getQual());
+             ps.setString(7, r.getSpecial());
+//             ps.setDate(8, (java.sql.Date)((Date) new SimpleDateFormat("yyyy").parse(yop)));
+//             ps.setDate(8, new java.sql.Date(new SimpleDateFormat("yyyy").parse(yop).getTime()));
+//             ps.setDate(8, new java.sql.Date(Long.parseLong(yop)));
+             ps.setObject(8, Year.of(Integer.parseInt(r.getYop())).getValue());
+             ps.setString(9, r.getInstitute());
+             ps.setInt(10, r.getPass_marks());
+             ps.setInt(11, r.getObtained_marks());
+             ps.setInt(12, r.getTotal_marks());
+             ps.setString(13, r.getExp());
+             ps.setString(14, pk_email);
+             
+             int n=ps.executeUpdate();
+             flag=1;
+             con.close();
+         }
+         catch(java.sql.SQLIntegrityConstraintViolationException E)
+            {
+//                b=false;
+                flag=-1;
+            }
+            catch(Exception E)
+            {
+                E.printStackTrace();
+//                b=false;
+            }
+        return flag;
+    }
+    
 }

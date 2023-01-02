@@ -151,7 +151,7 @@
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="year_create_pass" max="32767" attributes="0"/>
                                           <Component id="text_create_institute" max="32767" attributes="0"/>
-                                          <Component id="text_create_paassmarks" min="-2" pref="180" max="-2" attributes="0"/>
+                                          <Component id="text_create_passmarks" min="-2" pref="180" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -230,7 +230,7 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jLabel13" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <Component id="text_create_paassmarks" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                          <Component id="text_create_passmarks" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -528,7 +528,7 @@
                 <Property name="text" type="java.lang.String" value="Passing Marks :"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="text_create_paassmarks">
+            <Component class="javax.swing.JTextField" name="text_create_passmarks">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
@@ -536,9 +536,9 @@
                 <Property name="autoscrolls" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="text_create_paassmarksActionPerformed"/>
-                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="text_create_paassmarksKeyPressed"/>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="text_create_paassmarksKeyTyped"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="text_create_passmarksActionPerformed"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="text_create_passmarksKeyPressed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="text_create_passmarksKeyTyped"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel14">
