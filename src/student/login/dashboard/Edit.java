@@ -116,7 +116,7 @@ public class Edit extends javax.swing.JFrame {
         text_edit_obtainedmarks = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         text_edit_totalmarks = new javax.swing.JTextField();
-        btn_create_back = new javax.swing.JButton();
+        btn_edit_back = new javax.swing.JButton();
         btn_create_submit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -348,12 +348,12 @@ public class Edit extends javax.swing.JFrame {
             }
         });
 
-        btn_create_back.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btn_create_back.setText("Back");
-        btn_create_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_create_back.addActionListener(new java.awt.event.ActionListener() {
+        btn_edit_back.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_edit_back.setText("Back");
+        btn_edit_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_edit_back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_create_backActionPerformed(evt);
+                btn_edit_backActionPerformed(evt);
             }
         });
 
@@ -435,7 +435,7 @@ public class Edit extends javax.swing.JFrame {
                                                 .addComponent(text_edit_institute, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                                                 .addComponent(text_edit_passmarks)))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                            .addComponent(btn_create_back, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(btn_edit_back, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(32, 32, 32)
                                             .addComponent(btn_create_submit, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                         .addGap(10, 10, 10))))
@@ -468,7 +468,7 @@ public class Edit extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btn_create_submit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_create_back, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btn_edit_back, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -677,11 +677,11 @@ public class Edit extends javax.swing.JFrame {
             text_edit_totalmarks.setEditable(false);
     }//GEN-LAST:event_text_edit_totalmarksKeyTyped
 
-    private void btn_create_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_create_backActionPerformed
+    private void btn_edit_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_edit_backActionPerformed
         // TODO add your handling code here:
         dispose();
         new Dashboard(this.s).setVisible(true);
-    }//GEN-LAST:event_btn_create_backActionPerformed
+    }//GEN-LAST:event_btn_edit_backActionPerformed
 
     private void btn_create_submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_create_submitActionPerformed
         // TODO add your handling code here:
@@ -772,8 +772,8 @@ public class Edit extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_create_back;
     private javax.swing.JButton btn_create_submit;
+    private javax.swing.JButton btn_edit_back;
     private javax.swing.ButtonGroup btngrp_edit;
     private javax.swing.JLabel dashboard_edit_reports;
     private com.toedter.calendar.JDateChooser date_edit_dob;

@@ -4,7 +4,12 @@
  */
 package student.login.dashboard;
 
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.WindowConstants;
+import javax.swing.table.DefaultTableModel;
 import student.login.*;
 
 /**
@@ -18,6 +23,7 @@ public class Reports_frame extends javax.swing.JFrame {
      */
     
     Student s;
+    ArrayList<Report> all;
     
     public Reports_frame(Student s) {
         initComponents();
@@ -25,8 +31,22 @@ public class Reports_frame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.s=s;
+        selectAll();
     }
 
+    public void selectAll(){
+        Run_query run=new Run_query();
+        ArrayList<Report> r = run.run_select_all_query();
+//        DefaultTableModel model = new DefaultTableModel();
+        DefaultTableModel model = (DefaultTableModel) table_report.getModel();
+//        table_report.setModel(model);
+//        r=run.run_select_all_query();
+        model.setRowCount(0);
+        this.all=r;
+        for(Report i: r)
+            model.addRow(new Object[]{i.getLname(),i.getFname(),i.getDob(),i.getPh(), i.getEmail(), i.getQual(), i.getSpecial(), i.getYop(), i.getInstitute(), i.getPass_marks(), i.getObtained_marks(), i.getTotal_marks(), i.getExp()});
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,21 +56,179 @@ public class Reports_frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        dashboard_reports_header = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        dropdown_report = new javax.swing.JComboBox<>();
+        btn_report_select = new javax.swing.JToggleButton();
+        btn_report_all = new javax.swing.JToggleButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        table_report = new javax.swing.JTable();
+        btn_report_back = new javax.swing.JToggleButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        dashboard_reports_header.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        dashboard_reports_header.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dashboard_reports_header.setText("Reports");
+        dashboard_reports_header.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel3.setText("Filter by Course: ");
+
+        dropdown_report.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        dropdown_report.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ITI", "Diploma", "Graduation" }));
+
+        btn_report_select.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_report_select.setText("Select");
+        btn_report_select.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_report_select.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_report_selectActionPerformed(evt);
+            }
+        });
+
+        btn_report_all.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_report_all.setText("All");
+        btn_report_all.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_report_all.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_report_allActionPerformed(evt);
+            }
+        });
+
+        table_report.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        table_report.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Last_name", "First_name", "DOB", "Contact no", "Email_id", "Course", "Specialization", "Year", "Institute", "Passing_marks", "Obtained_marks", "Total_marks", "Expertise"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        table_report.setRowHeight(30);
+        table_report.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table_reportMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(table_report);
+
+        btn_report_back.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_report_back.setText("Back");
+        btn_report_back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_report_back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_report_backActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1)
+                    .addComponent(dashboard_reports_header, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1188, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dropdown_report, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_report_select, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_report_all, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_report_back, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(dashboard_reports_header, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(dropdown_report)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btn_report_select, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                        .addComponent(btn_report_all, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                        .addComponent(btn_report_back, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_report_allActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_report_allActionPerformed
+        // TODO add your handling code here:
+        selectAll();
+    }//GEN-LAST:event_btn_report_allActionPerformed
+
+    private void btn_report_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_report_backActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new Dashboard(s).setVisible(true);
+    }//GEN-LAST:event_btn_report_backActionPerformed
+
+    private void btn_report_selectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_report_selectActionPerformed
+        // TODO add your handling code here:
+        Run_query run=new Run_query();
+        ArrayList<Report> r = run.run_filter_query(dropdown_report.getSelectedItem().toString());
+        DefaultTableModel model = (DefaultTableModel) table_report.getModel();
+        model.setRowCount(0);
+        for(Report i: r)
+            model.addRow(new Object[]{i.getLname(),i.getFname(),i.getDob(),i.getPh(), i.getEmail(), i.getQual(), i.getSpecial(), i.getYop(), i.getInstitute(), i.getPass_marks(), i.getObtained_marks(), i.getTotal_marks(), i.getExp()});
+    }//GEN-LAST:event_btn_report_selectActionPerformed
+
+    private void table_reportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table_reportMouseClicked
+        // TODO add your handling code here:
+//        Object o=(Object)table_report.getValueAt(table_report.getSelectedRow(), 5);
+        String str=table_report.getValueAt(table_report.getSelectedRow(), 4).toString();
+        
+        for(Report i: all){
+            if(i.getEmail().equals(str)){
+                setVisible(false);
+                try {
+                    new Report_display(this.s,i).setVisible(true);
+                } catch (ParseException ex) {
+                    Logger.getLogger(Reports_frame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }//GEN-LAST:event_table_reportMouseClicked
 
     /**
      * @param args the command line arguments
@@ -88,5 +266,14 @@ public class Reports_frame extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btn_report_all;
+    private javax.swing.JToggleButton btn_report_back;
+    private javax.swing.JToggleButton btn_report_select;
+    private javax.swing.JLabel dashboard_reports_header;
+    private javax.swing.JComboBox<String> dropdown_report;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable table_report;
     // End of variables declaration//GEN-END:variables
 }

@@ -174,7 +174,7 @@
                                                   </Group>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="btn_create_back" min="-2" pref="150" max="-2" attributes="0"/>
+                                                  <Component id="btn_edit_back" min="-2" pref="150" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                                   <Component id="btn_create_submit" min="-2" pref="150" max="-2" attributes="0"/>
                                               </Group>
@@ -221,7 +221,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="btn_create_submit" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                  <Component id="btn_create_back" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Component id="btn_edit_back" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
@@ -592,7 +592,7 @@
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="text_edit_totalmarksKeyTyped"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btn_create_back">
+            <Component class="javax.swing.JButton" name="btn_edit_back">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -603,7 +603,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_create_backActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_edit_backActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn_create_submit">

@@ -9,6 +9,7 @@ import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Year;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -30,6 +31,9 @@ public class Run_query {
     String edit_fetch_query="SELECT * FROM student.student_report WHERE email = ?";
     String edit_update_query="UPDATE student.student_report SET lname=?, fname=?, dob=?, ph_no=?, email=?, qual_type=?, special=?, yop=?, institute=?, pass_marks=?, obtain_marks=?, total_marks=?, exp=? WHERE email=?";
 
+    String select_all_query="SELECT * FROM student.student_report";
+    String select_filter_query="SELECT * FROM student.student_report WHERE qual_type=?";
+    
 //    Run_query()
 //    {
 //        try {
@@ -242,6 +246,81 @@ public class Run_query {
 //                b=false;
             }
         return flag;
+    }
+    
+    public ArrayList<Report> run_select_all_query(){
+        
+        ResultSet rs=null;
+        ArrayList<Report> r = new ArrayList<>();
+        
+        try(Connection con=get_conn(); PreparedStatement ps=con.prepareStatement(select_all_query);){
+            
+            rs=ps.executeQuery();
+                
+            while(rs.next())
+            {
+                Report report=new Report();
+                report.setLname(rs.getString("lname"));
+                report.setFname(rs.getString("fname"));
+                report.setDob(rs.getDate("dob").toString());
+                report.setPh(rs.getString("ph_no"));
+                report.setEmail(rs.getString("email"));
+                report.setQual(rs.getString("qual_type"));
+                report.setSpecial(rs.getString("special"));
+                report.setYop(rs.getObject("yop").toString());
+                report.setInstitute(rs.getString("institute"));
+                report.setPass_marks(rs.getInt("pass_marks"));
+                report.setObtained_marks(rs.getInt("obtain_marks"));
+                report.setTotal_marks(rs.getInt("total_marks"));
+                report.setExp(rs.getString("exp"));
+                
+                r.add(report);
+            }
+            con.close();
+        }
+        catch(Exception E)
+        {
+            E.printStackTrace();
+        }
+        return r;
+    }
+    
+    public ArrayList<Report> run_filter_query(String course){
+        
+        ResultSet rs=null;
+        ArrayList<Report> r = new ArrayList<>();
+        
+        try(Connection con=get_conn(); PreparedStatement ps=con.prepareStatement(select_filter_query);){
+            
+            ps.setString(1, course);
+            rs=ps.executeQuery();
+                
+            while(rs.next())
+            {
+                Report report=new Report();
+                report.setLname(rs.getString("lname"));
+                report.setFname(rs.getString("fname"));
+                report.setDob(rs.getDate("dob").toString());
+                report.setPh(rs.getString("ph_no"));
+                report.setEmail(rs.getString("email"));
+                report.setQual(rs.getString("qual_type"));
+                report.setSpecial(rs.getString("special"));
+                report.setYop(rs.getObject("yop").toString());
+                report.setInstitute(rs.getString("institute"));
+                report.setPass_marks(rs.getInt("pass_marks"));
+                report.setObtained_marks(rs.getInt("obtain_marks"));
+                report.setTotal_marks(rs.getInt("total_marks"));
+                report.setExp(rs.getString("exp"));
+                
+                r.add(report);
+            }
+            con.close();
+        }
+        catch(Exception E)
+        {
+            E.printStackTrace();
+        }
+        return r;
     }
     
 }
