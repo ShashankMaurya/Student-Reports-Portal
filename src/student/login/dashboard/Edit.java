@@ -689,7 +689,7 @@ public class Edit extends javax.swing.JFrame {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         r.setLname(text_edit_lname.getText());
         r.setFname(text_edit_fname.getText());
-        r.setDob(sdf.format(date_edit_dob.getDate()));
+        r.setDob(date_edit_dob.getDate()==null?"":sdf.format(date_edit_dob.getDate()));
         r.setPh(text_edit_ph.getText());
         r.setEmail(text_edit_email.getText());
         r.setQual(btngrp_edit.getSelection().getActionCommand());
@@ -697,9 +697,9 @@ public class Edit extends javax.swing.JFrame {
         r.setExp(text_edit_expert.getText());
         r.setInstitute(text_edit_institute.getText());
         r.setYop(String.valueOf(year_edit_pass.getYear()));
-        r.setPass_marks(Integer.parseInt(text_edit_passmarks.getText()));
-        r.setObtained_marks(Integer.parseInt(text_edit_obtainedmarks.getText()));
-        r.setTotal_marks(Integer.parseInt(text_edit_totalmarks.getText()));
+        r.setPass_marks(Integer.parseInt(text_edit_passmarks.getText().isBlank()?"0":text_edit_passmarks.getText()));
+        r.setObtained_marks(Integer.parseInt(text_edit_obtainedmarks.getText().isBlank()?"0":text_edit_obtainedmarks.getText()));
+        r.setTotal_marks(Integer.parseInt(text_edit_totalmarks.getText().isBlank()?"0":text_edit_totalmarks.getText()));
         
         if(r.getFname().isBlank() || r.getDob().isBlank() || r.getPh().isBlank() || r.getEmail().isBlank() || r.getQual().isBlank() || r.getYop().isBlank() || r.getInstitute().isBlank() || r.getTotal_marks() == 0)
             JOptionPane.showMessageDialog(this, "Incomplete fields", "Failed", JOptionPane.ERROR_MESSAGE);

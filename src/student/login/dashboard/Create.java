@@ -6,6 +6,7 @@ package student.login.dashboard;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
@@ -651,18 +652,19 @@ public class Create extends javax.swing.JFrame {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String lname = text_create_lname.getText();
         String fname = text_create_fname.getText();
-        String dob = sdf.format(date_create_dob.getDate());
+//        String dob = sdf.format(date_create_dob.getDate()==null?new Date():date_create_dob.getDate());
+        String dob = date_create_dob.getDate()==null?"":sdf.format(date_create_dob.getDate());
         String ph = text_create_ph.getText();
         String email = text_create_email.getText();
-        String qual_type = btngrp_create.getSelection().getActionCommand();
+        String qual_type = btngrp_create.getSelection()==null?"":btngrp_create.getSelection().getActionCommand();
 //        String qual_type = (btngrp_create.getSelection() == radiobtn_create_iti)?radiobtn_create_iti.getText():((btngrp_create.getSelection() == radiobtn_create_diploma)?radiobtn_create_diploma.getText():radiobtn_create_grad.getText());
         String special = text_create_special.getText();
         String expert = text_create_expert.getText();
         String yop = String.valueOf(year_create_pass.getYear());
         String institute = text_create_institute.getText();
-        int pass_marks = Integer.parseInt(text_create_passmarks.getText());
-        int obtained_marks = Integer.parseInt(text_create_obtainedmarks.getText());
-        int total_marks = Integer.parseInt(text_create_totalmarks.getText());
+        int pass_marks = Integer.parseInt(text_create_passmarks.getText().isBlank()?"0":text_create_passmarks.getText());
+        int obtained_marks = Integer.parseInt(text_create_obtainedmarks.getText().isBlank()?"0":text_create_passmarks.getText());
+        int total_marks = Integer.parseInt(text_create_totalmarks.getText().isBlank()?"0":text_create_totalmarks.getText());
         
         if(fname.isBlank() || dob.isBlank() || ph.isBlank() || email.isBlank() || qual_type.isBlank() || yop.isBlank() || institute.isBlank() || total_marks == 0)
             JOptionPane.showMessageDialog(this, "Incomplete fields", "Failed", JOptionPane.ERROR_MESSAGE);
